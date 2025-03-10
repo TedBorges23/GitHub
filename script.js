@@ -2,7 +2,7 @@ function adicionarPlano() {
     const tabela = document.getElementById('tabela-planos').getElementsByTagName('tbody')[0];
     const novaLinha = tabela.insertRow();
 
-    for (let i = 0; i < 7; i++) { // Agora são 7 campos (incluindo Amex)
+    for (let i = 0; i < 8; i++) {
         const novaCelula = novaLinha.insertCell();
         const novoInput = document.createElement('input');
         novoInput.type = 'text';
