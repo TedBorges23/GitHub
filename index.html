@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plano Editável</title>
+    <title>Planos Editáveis</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Plano Editável</h1>
-    <table id="tabela-plano">
+    <h1>Planos Editáveis</h1>
+    <table id="tabela-planos">
         <thead>
             <tr>
                 <th>Tipo (Modalidade)</th>
@@ -17,52 +17,60 @@
                 <th>Elo</th>
                 <th>Hipercard</th>
                 <th>Prazo de Recebimento</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><input type="text" id="tipo-debito" value="Débito"></td>
-                <td><input type="text" id="visa-debito" value="1,10%"></td>
-                <td><input type="text" id="mastercard-debito" value="1,10%"></td>
-                <td><input type="text" id="elo-debito" value="2,20%"></td>
-                <td><input type="text" id="hipercard-debito" value="-"></td>
-                <td><input type="text" id="prazo-debito" value="D+1"></td>
+                <td><input type="text" value="Débito"></td>
+                <td><input type="text" value="1,10%"></td>
+                <td><input type="text" value="1,10%"></td>
+                <td><input type="text" value="2,20%"></td>
+                <td><input type="text" value="-"></td>
+                <td><input type="text" value="D+1"></td>
+                <td><button onclick="removerPlano(this)">Remover</button></td>
             </tr>
             <tr>
-                <td><input type="text" id="tipo-credito-vista" value="Crédito à vista"></td>
-                <td><input type="text" id="visa-credito-vista" value="2,20%"></td>
-                <td><input type="text" id="mastercard-credito-vista" value="2,20%"></td>
-                <td><input type="text" id="elo-credito-vista" value="2,80%"></td>
-                <td><input type="text" id="hipercard-credito-vista" value="2,80%"></td>
-                <td><input type="text" id="prazo-credito-vista" value="D+30"></td>
+                <td><input type="text" value="Crédito à vista"></td>
+                <td><input type="text" value="2,20%"></td>
+                <td><input type="text" value="2,20%"></td>
+                <td><input type="text" value="2,80%"></td>
+                <td><input type="text" value="2,80%"></td>
+                <td><input type="text" value="D+30"></td>
+                <td><button onclick="removerPlano(this)">Remover</button></td>
             </tr>
             <tr>
-                <td><input type="text" id="tipo-credito-2x-6x" value="Crédito 2x-6x"></td>
-                <td><input type="text" id="visa-credito-2x-6x" value="2,45%"></td>
-                <td><input type="text" id="mastercard-credito-2x-6x" value="2,45%"></td>
-                <td><input type="text" id="elo-credito-2x-6x" value="3,25%"></td>
-                <td><input type="text" id="hipercard-credito-2x-6x" value="3,25%"></td>
-                <td><input type="text" id="prazo-credito-2x-6x" value="D+30"></td>
+                <td><input type="text" value="Crédito 2x-6x"></td>
+                <td><input type="text" value="2,45%"></td>
+                <td><input type="text" value="2,45%"></td>
+                <td><input type="text" value="3,25%"></td>
+                <td><input type="text" value="3,25%"></td>
+                <td><input type="text" value="D+30"></td>
+                <td><button onclick="removerPlano(this)">Remover</button></td>
             </tr>
             <tr>
-                <td><input type="text" id="tipo-credito-7x-12x" value="Crédito 7x-12x"></td>
-                <td><input type="text" id="visa-credito-7x-12x" value="2,75%"></td>
-                <td><input type="text" id="mastercard-credito-7x-12x" value="2,75%"></td>
-                <td><input type="text" id="elo-credito-7x-12x" value="3,65%"></td>
-                <td><input type="text" id="hipercard-credito-7x-12x" value="3,65%"></td>
-                <td><input type="text" id="prazo-credito-7x-12x" value="D+30"></td>
+                <td><input type="text" value="Crédito 7x-12x"></td>
+                <td><input type="text" value="2,75%"></td>
+                <td><input type="text" value="2,75%"></td>
+                <td><input type="text" value="3,65%"></td>
+                <td><input type="text" value="3,65%"></td>
+                <td><input type="text" value="D+30"></td>
+                <td><button onclick="removerPlano(this)">Remover</button></td>
             </tr>
             <tr>
-                <td><input type="text" id="tipo-credito-13x-21x" value="Crédito 13x-21x"></td>
-                <td><input type="text" id="visa-credito-13x-21x" value="3,05%"></td>
-                <td><input type="text" id="mastercard-credito-13x-21x" value="3,05%"></td>
-                <td><input type="text" id="elo-credito-13x-21x" value="4,25%"></td>
-                <td><input type="text" id="hipercard-credito-13x-21x" value="4,25%"></td>
-                <td><input type="text" id="prazo-credito-13x-21x" value="D+30"></td>
+                <td><input type="text" value="Crédito 13x-21x"></td>
+                <td><input type="text" value="3,05%"></td>
+                <td><input type="text" value="3,05%"></td>
+                <td><input type="text" value="4,25%"></td>
+                <td><input type="text" value="4,25%"></td>
+                <td><input type="text" value="D+30"></td>
+                <td><button onclick="removerPlano(this)">Remover</button></td>
             </tr>
         </tbody>
     </table>
-    <p>Taxa de Antecipação: <input type="text" id="taxa-antecipacao" value="1,45%"></p>
+    <button onclick="adicionarPlano()">Adicionar Plano</button>
+    <p>Taxa de Antecipação: <input type="text" value="1,45%"></p>
+
     <script src="script.js"></script>
 </body>
 </html>
