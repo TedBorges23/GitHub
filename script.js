@@ -4,16 +4,16 @@ const pesquisaInput = document.getElementById('pesquisa-input');
 
 let planos = [
     {
-        nome: 'Plano Débito',
+        nome: 'Débito',
         tipo: 'Débito',
-        visa: '1,40%',
-        mastercard: '1,40%',
-        elo: '2,40%',
+        visa: '1,10%',
+        mastercard: '1,10%',
+        elo: '2,20%',
         hipercard: '-',
         prazo: 'D+1'
     },
     {
-        nome: 'Plano Crédito à vista',
+        nome: 'Crédito à vista',
         tipo: 'Crédito à vista',
         visa: '2,20%',
         mastercard: '2,20%',
@@ -22,30 +22,30 @@ let planos = [
         prazo: 'D+30'
     },
     {
-        nome: 'Plano Crédito 2x-6x',
+        nome: 'Crédito 2x-6x',
         tipo: 'Crédito 2x-6x',
-        visa: '2,60%',
-        mastercard: '2,60%',
-        elo: '3,20%',
-        hipercard: '3,20%',
+        visa: '2,45%',
+        mastercard: '2,45%',
+        elo: '3,25%',
+        hipercard: '3,25%',
         prazo: 'D+30'
     },
     {
-        nome: 'Plano Crédito 7x-12x',
+        nome: 'Crédito 7x-12x',
         tipo: 'Crédito 7x-12x',
-        visa: '2,80%',
-        mastercard: '2,80%',
-        elo: '3,80%',
-        hipercard: '3,80%',
+        visa: '2,75%',
+        mastercard: '2,75%',
+        elo: '3,65%',
+        hipercard: '3,65%',
         prazo: 'D+30'
     },
     {
-        nome: 'Plano Crédito 13x-21x',
+        nome: 'Crédito 13x-21x',
         tipo: 'Crédito 13x-21x',
-        visa: '3,20%',
-        mastercard: '3,20%',
-        elo: '4,20%',
-        hipercard: '4,20%',
+        visa: '3,05%',
+        mastercard: '3,05%',
+        elo: '4,25%',
+        hipercard: '4,25%',
         prazo: 'D+30'
     }
 ];
@@ -108,4 +108,13 @@ formularioAdicionarPlano.addEventListener('submit', (event) => {
     const hipercard = document.getElementById('hipercard').value;
     const prazo = document.getElementById('prazo').value;
 
-    const novoPlano = {
+    const novoPlano = { nome, tipo, visa, mastercard, elo, hipercard, prazo };
+    planos.push(novoPlano);
+
+    formularioAdicionarPlano.reset();
+    atualizarTabela();
+});
+
+pesquisaInput.addEventListener('input', atualizarTabela);
+
+atualizarTabela();
