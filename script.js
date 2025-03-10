@@ -1,6 +1,6 @@
-const tabelaPlanos = document.getElementById('tabela-planos').getElementsByTagName('tbody')[0];
-const formAdicionarPlano = document.getElementById('form-adicionar-plano');
-const pesquisaInput = document.getElementById('pesquisa');
+const tabelaPlanosBody = document.getElementById('tabela-planos-body');
+const formularioAdicionarPlano = document.getElementById('formulario-adicionar-plano');
+const pesquisaInput = document.getElementById('pesquisa-input');
 
 let planos = [
     {
@@ -62,12 +62,12 @@ function atualizarTabela() {
                plano.prazo.toLowerCase().includes(pesquisa);
     });
 
-    tabelaPlanos.innerHTML = '';
+    tabelaPlanosBody.innerHTML = '';
 
     planosFiltrados.forEach((plano, index) => {
-        const rowIndex = planos.indexOf(plano); // Encontra o índice correto no array original
+        const rowIndex = planos.indexOf(plano);
 
-        const row = tabelaPlanos.insertRow();
+        const row = tabelaPlanosBody.insertRow();
         const cellNome = row.insertCell();
         const cellTipo = row.insertCell();
         const cellVisa = row.insertCell();
@@ -87,7 +87,7 @@ function atualizarTabela() {
 
         const botaoRemover = document.createElement('button');
         botaoRemover.textContent = 'Remover';
-        botaoRemover.onclick = () => removerPlano(rowIndex); // Usa o índice correto
+        botaoRemover.onclick = () => removerPlano(rowIndex);
         cellAcoes.appendChild(botaoRemover);
     });
 }
@@ -97,7 +97,7 @@ function removerPlano(index) {
     atualizarTabela();
 }
 
-formAdicionarPlano.addEventListener('submit', (event) => {
+formularioAdicionarPlano.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const nome = document.getElementById('nome').value;
@@ -108,13 +108,4 @@ formAdicionarPlano.addEventListener('submit', (event) => {
     const hipercard = document.getElementById('hipercard').value;
     const prazo = document.getElementById('prazo').value;
 
-    const novoPlano = { nome, tipo, visa, mastercard, elo, hipercard, prazo };
-    planos.push(novoPlano);
-
-    formAdicionarPlano.reset();
-    atualizarTabela();
-});
-
-pesquisaInput.addEventListener('input', atualizarTabela);
-
-atualizarTabela();
+    const novoPlano = {
